@@ -1,38 +1,63 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.user-button {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(97, 218, 251, 0.15);
+    outline: none;
+}
+
+.user-button:hover,
+.user-button:focus {
+    background-color: #21a1f3;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(33, 161, 243, 0.18);
+}
+
+.user-button:active {
+    background-color: #1b7bb8;
+    transform: translateY(1px) scale(0.98);
 }
