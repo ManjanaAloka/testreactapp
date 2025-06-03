@@ -1,79 +1,48 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, TextField, Button, Box } from '@mui/material';
+import { useState } from 'react';
 
 const UserForm = props => {
+    const [id, setId] = useState();
+    const [name, setName] = useState();
     return (
-        <Grid
-            container
-            spacing={2}
-            sx={{
-                backgroundColor: 'white',
-                marginBottom: '30px',
-                display: 'block'
-            }}
-        >
-
-            <Grid item xs={12}>
-                <Typography component={"h1"} sx={{ color: '#2d3a4b' }}>User Form</Typography>
+        <Box sx={{ backgroundColor: 'white', p: 4, borderRadius: 2, maxWidth: 500, mx: 'auto', mt: 5, boxShadow: 3 , marginBottom: '40px'}}>
+            <Typography variant="h5" sx={{ color: '#2d3a4b', mb: 3, textAlign: 'center' }}>User Form</Typography>
+            <Grid container spacing={3}>
+                <Grid item xs={12}>
+                    <TextField
+                        fullWidth
+                        id="id"
+                        name="id"
+                        label="User ID"
+                        variant="outlined"
+                        value={id}
+                        onChange={e => {setId(e.target.value)}}
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField
+                        fullWidth
+                        id="name"
+                        name="name"
+                        label="Name"
+                        variant="outlined"
+                        value={name}
+                        onChange={e => {setName(e.target.value)}}
+                    />
+                </Grid>
+                <Grid item xs={12} sx={{ textAlign: 'center' }}>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: '#2d3a4b',
+                            '&:hover': { backgroundColor: '#1a2533' }
+                        }}
+                    >
+                        Submit
+                    </Button>
+                </Grid>
             </Grid>
-
-            <Grid item xs={12} sm={6} sx={{ display: 'flex' }} >
-                <Typography component={"label"} htmlFor='id'
-                    sx={{
-                        color: '#2d3a4b',
-                        marginRight: '20px',
-                        fontSize: '16px',
-                        width: '100px',
-                        display: 'block'
-                    }}
-                >
-                    User ID
-                </Typography>
-
-                <input
-                    type="text"
-                    id="id"
-                    name="id"
-                    sx={{ width: '400px' }}
-                    value={''}
-                    onChange={e => { }}
-                />
-            </Grid>
-
-            <Grid item xs={12} sm={6} sx={{ display: 'flex' }} >
-                <Typography component={"label"} htmlFor='id'
-                    sx={{
-                        color: '#2d3a4b',
-                        marginRight: '20px',
-                        fontSize: '16px',
-                        width: '100px',
-                        display: 'block'
-                    }}
-                >
-                </Typography>
-
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    sx={{ width: '400px' }}
-                    value={''}
-                    onChange={e => { }}
-                />
-            </Grid>
-
-            <button sx={{
-                margin: 'auto',
-                marginBottom: '20px',
-                backgroundColor: '#2d3a4b',
-                color: 'white',
-                marginLeft: '15px',
-                marginTop: '20px',
-                '&:hiver': {
-                    opacity: '0.7',
-                    backgroundColor: '#2d3a4b'
-                }
-            }}></button>
-        </Grid>
+        </Box>
     );
 }
 
